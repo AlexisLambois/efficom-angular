@@ -1,0 +1,24 @@
+.matlist {
+  height: 100%;
+  border: 2px solid black;
+}
+
+.filter {
+  width: 90%;
+  margin-left: 10px;
+}
+
+.list {
+  overflow-y: auto;
+  height: 88%;
+}
+
+.listitem {
+  height: fit-content;
+  cursor: pointer;
+}
+
+.icone {
+  width: 10%;
+  height: auto;
+}

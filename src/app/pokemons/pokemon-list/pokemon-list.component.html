@@ -1,0 +1,16 @@
+<div class="matlist">
+  <mat-form-field class="filter">
+    <input matInput [(ngModel)]="search" placeholder="Filter" (keyup)="refresh()" >
+  </mat-form-field>
+  <mat-list infinite-scroll
+            [scrollWindow]="false"
+            [infiniteScrollDistance]="scrollDistance"
+            [infiniteScrollUpDistance]="scrollUpDistance"
+            [infiniteScrollThrottle]="throttle"
+            (scrolled)="onScrollDown()" class="list">
+    <mat-list-item *ngFor="let pokemon of arraytoDisplay" (click)="selectItem(pokemon)" class="listitem">
+      <img matListAvatar [src]="getLink(pokemon.id)" alt="..." class="icone">
+      <span>{{pokemon.id}}. {{pokemon.name}}</span>
+    </mat-list-item>
+  </mat-list>
+</div>

@@ -1,0 +1,40 @@
+<ng-container *ngIf="pokemonDetail">
+  <div class="container-fluid element">
+    <div class="col-8 offset-2">
+      <mat-card style="border:1px solid black">
+        <div class="row">
+          <div class="col-4 offset-1">
+            <mat-list role="list">
+              <mat-list-item role="listitem" style="height: fit-content;"><img mat-card-image
+                                                                               src="{{getLink(pokemonDetail.id)}}"
+                                                                               alt="Photo of a Shiba Inu">
+              </mat-list-item>
+              <mat-list-item role="listitem"><p style="margin-bottom: 0;margin-left: auto;margin-right: auto">
+                No.{{parseId(pokemonDetail.id)}}</p></mat-list-item>
+            </mat-list>
+          </div>
+          <div class="col-6 ">
+            <mat-list role="list">
+              <mat-list-item role="listitem">{{pokemonDetail.name}}
+                <mat-icon style="cursor: pointer" (click)="playAudio()">play_circle_outline</mat-icon>
+              </mat-list-item>
+              <mat-list-item role="listitem">
+                <mat-chip-list>
+                  <mat-chip *ngFor="let type of pokemonDetail.types">{{ type }}</mat-chip>
+                </mat-chip-list>
+              </mat-list-item>
+              <mat-list-item role="listitem">Taille : {{pokemonDetail.height}} m</mat-list-item>
+              <mat-list-item role="listitem">Poids : {{pokemonDetail.weight}} kg</mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+        <hr class="bar mt-0 mb-3">
+        <div class="row">
+          <div class="col-10 offset-1">
+            <p>{{ pokemonDetail.description}}</p>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</ng-container>

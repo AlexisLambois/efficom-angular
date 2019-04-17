@@ -1,0 +1,6 @@
+<div class="container-fluid element">
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" class="sidenav" opened><app-pokemon-list (selected)="refreshDetail($event)"></app-pokemon-list></mat-drawer>
+    <mat-drawer-content><app-pokemon-detail [id]="id" *ngIf="id" ></app-pokemon-detail></mat-drawer-content>
+  </mat-drawer-container>
+</div>

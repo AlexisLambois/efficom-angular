@@ -1,0 +1,15 @@
+.example-container {
+  width: 100%;
+  height: 80vh;
+  border: 1px solid #555;
+}
+
+.element {
+  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+
+.sidenav {
+  width: 40%;
+  overflow-y: hidden;
+}
