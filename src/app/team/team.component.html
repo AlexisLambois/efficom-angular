@@ -1,0 +1,89 @@
+<div *ngIf="messageAlert" class="alert alert-warning" role="alert">
+  {{messageAlert}}
+</div>
+<div class="container-fluid">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Pokemons" aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let state of filteredStates | async" [value]="state.name" (click)="addPokemon(state.id)">
+          <img src="../../../assets/img/sprites/{{state.id}}.png"/><span>{{state.name}}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-4 mb-4 table">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell class="colorWhite p-3" *matHeaderCellDef>No.</th>
+      <td mat-cell class="p-3" *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell class="p-3 colorWhite" *matHeaderCellDef>Nom</th>
+      <td mat-cell class="p-1" *matCellDef="let element"><img
+        src="../../../assets/img/sprites/{{element.id}}.png">{{element.name}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell class="colorWhite p-3 description" *matHeaderCellDef>Description</th>
+      <td mat-cell class="p-3 description" *matCellDef="let element">{{element.description}}</td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="types">
+      <th mat-header-cell class="p-3 colorWhite" *matHeaderCellDef>Types</th>
+      <td mat-cell class="p-3" *matCellDef="let element">
+        <mat-chip-list>
+          <mat-chip *ngFor="let type of element.types"
+                    [ngClass]="{'chipCombat': type==='Combat',
+                        'chipFee': type==='Fée',
+                        'chipPsy': type==='Psy',
+                        'chipRoche': type==='Roche',
+                        'chipGlace': type==='Glace',
+                        'chipGhost': type==='Spectre',
+                        'chipDragon': type==='Dragon',
+                        'chipFeau': type==='Feau',
+                        'chipSteel': type==='Acier',
+                        'chipElectrick': type==='Electrik',
+                        'chipSol': type==='Sol',
+                        'chipNormal': type==='Normal',
+                        'chipFly': type==='Vol',
+                        'chipPlante': type==='Plante',
+                        'chipPoison': type==='Poison',
+                        'chipFeu': type==='Feu',
+                        'chipEau': type==='Eau',
+                        'chipInsecte': type==='Insecte'}">{{type}}</mat-chip>
+        </mat-chip-list>
+      </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="height">
+      <th mat-header-cell class="p-3 colorWhite" *matHeaderCellDef>Taille</th>
+      <td mat-cell class="p-3" *matCellDef="let element">{{element.height}} m</td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell class="p-3 colorWhite" *matHeaderCellDef>Poids</th>
+      <td mat-cell class="p-3" *matCellDef="let element">{{element.weight}} kg</td>
+    </ng-container>
+
+    <!-- Star Column -->
+    <ng-container matColumnDef="star">
+      <th mat-header-cell class="p-3 colorWhite" *matHeaderCellDef></th>
+      <td mat-cell class="p-3" *matCellDef="let element; let i = index;">
+        <button mat-icon-button (click)="removePokemon(i)">
+          <mat-icon class="disable-select">clear</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row class="bg-purple" *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+

@@ -1,0 +1,157 @@
+.table {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.element {
+  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+
+.example-container {
+  width: 100%;
+  height: 80vh;
+  border: 2px solid #140078;
+}
+
+.sidenav {
+  width: 40%;
+  overflow-y: hidden;
+}
+
+.draw {
+  background-color: #8559da;
+}
+
+.table thead tr {
+  background-color: #140078;
+}
+
+.table thead th {
+  color: white;
+}
+
+.chipPlante {
+  background-color: #6ec547;
+  color: white;
+}
+
+.chipPoison {
+  background-color: #a34493;
+  color: white;
+}
+
+.chipFeu {
+  background-color: #ee3b2d;
+  color: white;
+}
+
+.chipEau {
+  background-color: #3489fb;
+  color: white;
+}
+
+.chipInsecte {
+  background-color: #9eb027;
+  color: white;
+}
+
+.chipFly {
+  background-color: #8c9cf2;
+  color: white;
+}
+
+.chipNormal {
+  background-color: #9d9583;
+  color: white;
+}
+
+.chipSol {
+  background-color: #ad8a3f;
+  color: white;
+}
+
+.chipElectrick {
+  background-color: #fcba35;
+  color: white;
+}
+
+.chipFee {
+  background-color: #f2a3f4;
+  color: white;
+}
+
+.chipCombat {
+  background-color: #903f2f;
+  color: white;
+}
+
+.chipPsy {
+  background-color: #fa5b94;
+  color: white;
+}
+
+.chipRoche {
+  background-color: #ae944d;
+  color: white;
+}
+
+.chipSteel {
+  background-color: #9d9cb8;
+  color: white;
+}
+
+.chipGlace {
+  background-color: #52c4de;
+  color: white;
+}
+
+.chipGhost {
+  background-color: #504ea4;
+  color: white;
+}
+
+.chipDragon {
+  background-color: #644cd2;
+  color: white;
+}
+
+.chipFeau {
+  background-image: linear-gradient(to right, #ee3b2d, #3489fb);
+  color: white;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-option-img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+[dir='rtl'] .example-option-img {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+.bg-purple {
+  background-color: #140078;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.description{
+  width: 80vh;
+}

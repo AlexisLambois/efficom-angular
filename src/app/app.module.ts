@@ -6,13 +6,25 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PokemonsComponent} from './pokemons/pokemons.component';
 import {PokemonListComponent} from './pokemons/pokemon-list/pokemon-list.component';
-import {MatCardModule, MatChipsModule, MatIconModule, MatInputModule, MatListModule, MatSidenavModule} from '@angular/material';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatCardModule,
+  MatChipsModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatSidenavModule, MatTableModule
+} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {PokemonDetailComponent} from './pokemons/pokemon-detail/pokemon-detail.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {PokedexComponent} from './pokemons/pokedex/pokedex.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {TeamComponent} from './team/team.component';
+import {LoginComponent} from './login/login.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +32,9 @@ import {FormsModule} from '@angular/forms';
     PokemonsComponent,
     PokemonListComponent,
     PokemonDetailComponent,
-    PokedexComponent
+    PokedexComponent,
+    TeamComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +49,12 @@ import {FormsModule} from '@angular/forms';
     InfiniteScrollModule,
     MatSidenavModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatTableModule,
+    NgbModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

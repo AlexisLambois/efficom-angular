@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 export class Pokemon {
   id: number;
@@ -37,6 +38,10 @@ export class PokemonService {
         return resolve(response);
       });
     });
+  }
+
+  getDetailsObs(id: number): Observable<PokemonDetail> {
+    return this.http.get<any>('http://51.75.122.159:3000/pokemons/' + id);
   }
 
   findBySearch(search: string): Promise<Pokemon[]> {

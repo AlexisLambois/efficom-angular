@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="col-4 offset-4">
+    <div class="example-container element">
+      <h2>Connectez vous !</h2>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="email" placeholder="Login">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" [(ngModel)]="password" placeholder="Password">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="connection()">GO !</button>
+    </div>
+  </div>
+</div>
